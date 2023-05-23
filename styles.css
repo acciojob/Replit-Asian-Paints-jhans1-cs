@@ -13,7 +13,7 @@
             cursor: pointer;
         }
         
-        #change_button,
-        #reset_button {
+        input[type="text"],
+        button {
             margin-top: 10px;
         }
