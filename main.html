@@ -10,7 +10,48 @@
 	<!-- the entire body must be written by student -->
     <script type="text/javascript" src="./script.js">
 </script>
-
+<div id="grid-container">
+        <div class="grid-item" id="1"></div>
+        <div class="grid-item" id="2"></div>
+        <div class="grid-item" id="3"></div>
+        <div class="grid-item" id="4"></div>
+        <div class="grid-item" id="5"></div>
+        <div class="grid-item" id="6"></div>
+        <div class="grid-item" id="7"></div>
+        <div class="grid-item" id="8"></div>
+        <div class="grid-item" id="9"></div>
+    </div>
+    
+    <label for="block_id">Block ID:</label>
+    <input type="text" id="block_id">
+    <label for="color_id">Color:</label>
+    <input type="text" id="color_id">
+    <button id="change_button">Change Color</button>
+    <button id="reset_button">Reset</button>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gridItems = document.getElementsByClassName('grid-item');
+            
+            function resetGrid() {
+                Array.from(gridItems).forEach(item => {
+                    item.style.backgroundColor = 'transparent';
+                });
+            }
+            
+            function changeColor() {
+                const blockId = document.getElementById('block_id').value;
+                const colorId = document.getElementById('color_id').value;
+                const block = document.getElementById(blockId);
+                
+                resetGrid();
+                block.style.backgroundColor = colorId;
+            }
+            
+            document.getElementById('change_button').addEventListener('click', changeColor);
+            document.getElementById('reset_button').addEventListener('click', resetGrid);
+        });
+    </script>
 </body>
 
 </html>
